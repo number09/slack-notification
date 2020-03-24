@@ -1,0 +1,20 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+aws-cdk-core = "*"
+aws-cdk-aws-apigateway = "*"
+aws-cdk-aws-ssm = "*"
+aws-cdk-aws-lambda = "*"
+
+[packages]
+requests = "*"
+
+[requires]
+python_version = "3.8"
+
+[scripts]
+layer = "bash -c \"mkdir -p ./layer/python && pipenv lock -r | xargs pip install --upgrade -t ./layer/python\""
+
